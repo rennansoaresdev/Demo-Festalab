@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <% if notice.present? %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<%= render @user %>
+<h1>Detalhes</h1>
 
-<div>
-  <%= link_to "Editar usuário", edit_user_path(@user) %> |
-  <%= link_to "Voltar para usuários", users_path %>
-
-  <%= button_to "Deletar", @user, method: :delete %>
+  <div class="user-card">
+    <div class="user-info">
+      <%= render @user %>
+    </div>
+    <div class="user-actions">
+      <%= link_to "Editar", edit_user_path(@user), class: "btn btn-success" %>
+      <%= button_to "Deletar", @user, method: :delete, class: "btn btn-danger", onclick: "return confirm('Tem certeza de que deseja deletar este usuário?');" %>
+      <%= link_to "Voltar", users_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>

@@ -1,10 +1,7 @@
-<h1>Editar usuário</h1>
+<div class="container">
+  <h1>Editar usuário</h1>
 
-<%= render "form", user: @user %>
+  <%= render "form", user: @user %>
+  <%= link_to "Voltar", @user, class:"btn btn-primary btn-back"%>
 
-<br>
-
-<div>
-  <%= link_to "Ver usuário", @user %> |
-  <%= link_to "Voltar para usuários", users_path %>
 </div>

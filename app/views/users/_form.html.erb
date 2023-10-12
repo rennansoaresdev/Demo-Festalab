@@ -1,37 +1,37 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "erro") %>, campos invalidos!</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_with(model: user) do |form|%>
   <div>
-    <%= form.label :Nome, style: "display: block" %>
+    <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
+    <% if user.errors.has_key?(:name) %>
+      <p class="text-danger"><%= user.errors[:name].first %></p>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :Email, style: "display: block" %>
+    <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
+    <% if user.errors.has_key?(:email) %>
+      <p class="text-danger"><%= user.errors[:email].first %></p>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :Telefone, style: "display: block" %>
     <%= form.text_field :phone %>
+    <% if user.errors.has_key?(:phone) %>
+      <p class="text-danger"><%= user.errors[:phone].first %></p>
+    <% end %>
   </div>
 
   <div>
-    <%= form.label :Cpf, style: "display: block" %>
+    <%= form.label :cpf, style: "display: block" %>
     <%= form.text_field :cpf %>
+    <% if user.errors.has_key?(:cpf) %>
+      <p class="text-danger"><%= user.errors[:cpf].first %></p>
+    <% end %>
   </div>
-
+  <br>
   <div>
-    <%= form.submit (@user.new_record? ? "Criar Novo Usuário" : "Atualizar") %>
+    <%= form.submit (@user.new_record? ? "Criar Novo Usuário" : "Atualizar"), class:"btn btn-success  btn-custom" %>
   </div>
 <% end %>
