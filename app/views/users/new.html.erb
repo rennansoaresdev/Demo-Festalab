@@ -1,13 +1,7 @@
 <div class="container">
-  <div class="card">
-    <h1>Novo usuário</h1>
+  <h1>Novo usuário</h1>
 
-    <%= render "form", user: @user %>
+  <%= render "form", user: @user %>
+  <%= link_to "Voltar para usuários", users_path, class:"btn btn-primary btn-back" %>
 
-    <br>
-
-    <div>
-      <%= link_to "Voltar para usuários", users_path %>
-    </div>
-  </div>
 </div>

@@ -29,5 +29,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Não pode ficar em branco"
+            email:
+              blank: "Não pode ficar em branco"
+              invalid: "Email inválido"
+            phone:
+              blank: "Não pode ficar em branco"
+              invalid: "Telefone inválido"
+            cpf:
+              blank: "Não pode ficar em branco"
+              invalid: "Cpf inválido"
